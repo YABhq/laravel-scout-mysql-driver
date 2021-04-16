@@ -64,6 +64,7 @@ class MySQLEngine extends Engine
 
         $whereRawString = $mode->buildWhereRawString($builder);
         $params = $mode->buildParams($builder);
+        ksort($params,SORT_NATURAL);
 
         $model = $builder->model;
         $query = $model::whereRaw($whereRawString, $params);
